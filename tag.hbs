@@ -27,12 +27,12 @@
                     </div>
                 {{/if}}
             </section>
-        {{/post}}
-        <div class="post-feed container medium">
+            <div class="post-feed container medium">
             {{#foreach posts visibility="all"}}
                 {{> "loop"}}
             {{/foreach}}
-        </div>
+            </div>
         {{pagination}}
+        {{/post}}
     </main>
 </div>
