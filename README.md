@@ -2,7 +2,7 @@
 
 A highly functional theme that adapts to the reader's preferences. Let them read, search, subscribe, navigate, and more with ease. Completely free and fully responsive, released under the MIT license.
 
-**Demo: https://dawn.ghost.io**
+**Demo: https://hackemate.ninja**
 
 &nbsp;
 
