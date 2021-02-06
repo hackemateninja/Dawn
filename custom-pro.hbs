@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{#post}}
+<div class="content-area">
+    <main class="site-main">
+        {{> content width="wide"}}
+        <div class="post-feed container medium">
+            {{#get 'posts'}}
+                {{#foreach posts visibility='all'}}
+                    {{#has visibility="paid"}}
+                        {{> "loop"}}
+                    {{/has}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </main>
+</div>
+{{/post}}
