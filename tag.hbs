@@ -1,8 +1,8 @@
 {{!< default}}
 
+{{#post}}
 <div class="content-area">
     <main class="site-main">
-        {{#post}}
             <section class="tag">
                 <div class="container medium">
                     <h1 class="tag-name">{{name}}</h1>
@@ -27,11 +27,6 @@
                     </div>
                 {{/if}}
             </section>
-            <div class="post-feed container medium">
-            {{#foreach posts visibility="all"}}
-                {{> "loop"}}
-            {{/foreach}}
-            </div>
-        {{/post}}
     </main>
 </div>
+{{/post}}
