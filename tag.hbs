@@ -1,23 +1,24 @@
 {{!< default}}
 
-{{#post}}
 <div class="content-area">
     <main class="site-main">
+        {{#tag}}
             <section class="tag">
                 <div class="container medium">
                     <h1 class="tag-name">{{name}}</h1>
                     {{#if description}}
                         <div class="tag-description">{{description}}</div>
                     {{/if}}
-                    {{#get 'tags' limit='all' include='count.posts' order='published_at asc'}}
-                       <div class="tag-list">
+                    {{#get "tags" limit="all" filter="id:-{{id}}+visibility:public" as |tags|}}
+                        {{#if tags}}
+                            <div class="tag-list">
                                 <span class="tag-list-label">More:</span>
                                 {{#foreach tags}}
                                     <a class="tag-list-item" href="{{url}}">{{name}}</a>
                                 {{/foreach}}
                             </div>
+                        {{/if}}
                     {{/get}}
-                
                 </div>
                 {{#if feature_image}}
                     <div class="container">
@@ -27,6 +28,12 @@
                     </div>
                 {{/if}}
             </section>
+        {{/tag}}
+        <div class="post-feed container medium">
+            {{#foreach posts visibility="all"}}
+                {{> "loop"}}
+            {{/foreach}}
+        </div>
+        {{pagination}}
     </main>
 </div>
-{{/post}}
